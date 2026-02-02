@@ -17,23 +17,49 @@ The questions from your notes today are below, please copy your answers them her
 
 ```{R}
 
+fahrenheight_to_c <- function(tempf) {
+  (tempf - 32)*5/9
+}
+fahrenheight_to_c(32)
+fahrenheight_to_c(212)
 
 ```
+
 
 2. Expand that function so that it takes a temperature in Fahrenheit and a distance in feet and returns **both** the temperature in Celcius and the distance in meters (you'll likely need to remember the `c()` function!)
 
 
 ```{r}
-
+conversions <- function(temp_f, distance_f) {
+  temp_c <- (temp_f - 32)*5/9
+  distance_m <- distance_f / 3.281
+  return(c(temp_c, distance_m))
+}
+conversions(32,3)
 
 ```
 
 
 3. Write a function that prints out a statement of whether the number passed as an argument is positive, negative or 0. 
 
-```{R}
+```{R eval num}
 
+label <- function(numpass){
+  if (ran_number < 0) {
+    print("The number is negative")
+  } else if (ran_number > 0) {
+    print("The number is positive")
+  } else {
+    print("The number is 0.")
+  }
+}
+```
 
+```{r}
+
+label(0)
+label(1)
+label(-1)
 ```
 
 4. Write a function that returns the absolute value of the number passed as an argument.
