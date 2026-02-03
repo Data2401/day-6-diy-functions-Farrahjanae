@@ -45,10 +45,10 @@ conversions(32,3)
 ```{R eval num}
 
 label <- function(numpass){
-  if (ran_number < 0) {
-    print("The number is negative")
-  } else if (ran_number > 0) {
-    print("The number is positive")
+  if (numpass < 0) {
+    print("The number is negative.")
+  } else if (numpass > 0) {
+    print("The number is positive.")
   } else {
     print("The number is 0.")
   }
@@ -66,7 +66,21 @@ label(-1)
    + Don't use `abs()`. Use the flow from problem 1 and multiply by negative one as necessary. 
    
 ```{r}
+absolute_val <- function(some_number) {
+  if (some_number < 0) {
+    return(some_number * -1)
+  } else {
+    return(some_number)
+  }
+}
 
+
+```
+
+```{r}
+absolute_val(2)
+absolute_val(-2)
+absolute_val(0)
 
 ```
 
@@ -74,8 +88,25 @@ label(-1)
    + There are functions that check and return T/F: `is.numeric()` or `is.character()` would be relevant here
    
 ```{r}
+absolute_val <- function(some_number) {
+  if (!is.numeric(some_number)) {
+    return("Please pass a numerical value to this function.")
+  } else if (some_number < 0) {
+    return(some_number * -1)
+  } else {
+    return(some_number)
+  }
+}
 
 
+```
+
+```{r}
+
+absolute_val("Hi")
+absolute_val(2)
+absolute_val(-2)
+absolute_val(0)
 
 ```
    
